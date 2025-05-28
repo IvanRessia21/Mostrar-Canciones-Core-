@@ -34,12 +34,20 @@
     
            <td> <a href="/canciones/detalle/${cancion.id}" > Detalle</a> </td> 
           
+          
              </tr>
       </c:forEach>
+       
         
         </tbody>
       </table>
    
+              <a href="/canciones/formulario" >
+       <button >
+          Agregar Cancion
+       </button>
+       </a>
+     
       
    
     
