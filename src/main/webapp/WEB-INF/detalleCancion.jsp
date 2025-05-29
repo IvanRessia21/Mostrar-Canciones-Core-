@@ -11,7 +11,32 @@
 <body>
 
 <h1>Datos de la Cancion: </h1>
- <h2>${cancionCompleta.album} - ${cancionCompleta.artista} - ${cancionCompleta.genero} - ${cancionCompleta.idioma} - ${cancionCompleta.titulo}  <a href="/canciones"> Volver a Lista de Canciones </a></h2>
+
+ <h2> Album: ${cancionCompleta.album} </h2>
+ 
+  <h2> Artista: ${cancionCompleta.artista} </h2> 
+  
+  <h2> Genero: ${cancionCompleta.genero} </h2>
+  
+   <h2> Idioma: ${cancionCompleta.idioma} </h2> 
+   
+    <h2>Titulo: ${cancionCompleta.titulo} </h2>
+    
+    
+    <a href="/canciones">
+    <button>
+     Volver a Lista de Canciones 
+     </button>
+    
+    </a> 
+    
+     <a href="/canciones/formulario/editar/${cancionCompleta.id}">
+     
+      <button>
+     Editar Cancion
+     </button>
+      
+      </a> 
  
 </body>
 </html>

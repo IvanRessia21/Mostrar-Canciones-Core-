@@ -17,6 +17,7 @@
              <th>Titulo </th>
              <th>Artista</th>
              <th>Detalle</th>
+            
              
              
              </tr>
@@ -33,6 +34,8 @@
            <td> ${cancion.artista} </td>
     
            <td> <a href="/canciones/detalle/${cancion.id}" > Detalle</a> </td> 
+           
+          
           
           
              </tr>
@@ -47,9 +50,8 @@
           Agregar Cancion
        </button>
        </a>
-     
-      
-   
+    
+    
     
    
 

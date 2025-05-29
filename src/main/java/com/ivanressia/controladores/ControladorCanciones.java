@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.ivanressia.modelos.Cancion;
 import com.ivanressia.servicios.ServicioCancion;
@@ -68,7 +69,31 @@ public class ControladorCanciones {
 		return "redirect:/canciones";
 	}
 	
+	@GetMapping("/canciones/formulario/editar/{idCancion}")
+	public String formularioEditarCancion(@ModelAttribute("cancion") Cancion cancion ,
+			                               @PathVariable("idCancion")Long idCancion,
+			                               Model modelo) {
+		Cancion cancionActual = this.servicioCancion.obtenerCancionPorId(idCancion);
+		modelo.addAttribute("cancion", cancionActual);
+		
+		return"editarCancion.jsp";
+		
+	}
 
+	@PutMapping("/canciones/procesa/editar/{idCancion}")
+	public String procesarEditarCancion(@Valid @ModelAttribute ("cancion") Cancion cancion ,
+                                        BindingResult validaciones,
+	                                    @PathVariable("idCancion")Long idCancion){
+		
+		if(validaciones.hasErrors()) {
+			return"editarCancion.jsp";
+		}
+		
+		cancion.setId(idCancion);
+		
+	  this.servicioCancion.editarCancion(cancion);
+	  return"redirect:/canciones";
+	}
 
 }
 

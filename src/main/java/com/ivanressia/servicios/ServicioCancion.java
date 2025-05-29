@@ -37,5 +37,9 @@ public class ServicioCancion {
 		return this.repositorioCancion.save(nuevaCancion);
 	}
 	
+	public Cancion editarCancion(Cancion cancionActual) {
+		return this.repositorioCancion.save(cancionActual);
+	}
+	
 
 }
