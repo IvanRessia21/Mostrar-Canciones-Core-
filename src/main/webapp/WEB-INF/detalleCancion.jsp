@@ -37,6 +37,16 @@
      </button>
       
       </a> 
+      
+      <form action="/canciones/eliminar/${cancionCompleta.id}" method="post">
+      <input type="hidden" name="_method" value="DELETE" />
+      <button>
+      
+      Eliminar Cancion
+      
+      </button>
+      
+      </form>
  
 </body>
 </html>
